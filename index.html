@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yashveer Singh Rajpoot – Web & Python Developer Portfolio</title>
+<meta name="description" content="Official portfolio of Yashveer Singh Rajpoot – web developer and Python developer showcasing HTML, CSS, JavaScript and GitHub projectss.">
+
+<style>
+:root{
+  --bg:#0b0d10;
+  --card:rgba(11,13,16,0.55);
+  --glass:rgba(11,13,16,0.72);
+  --muted:#9aa3a8;
+  --accent:#22c55e;
+  --radius:16px;
+  --shadow:0 10px 32px rgba(0,0,0,0.7);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:#e8eef1;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:1100px;margin:auto;padding:40px 22px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:980px){
+  .hero{grid-template-columns:1fr 360px}
+  .right-card{position:sticky;top:40px}
+}
+.brand{display:flex;gap:18px;align-items:center}
+.avatar{
+  width:84px;
+  height:84px;
+  border-radius:14px;
+  overflow:hidden; /* VERY IMPORTANT */
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* keeps face centered and not stretched */
+}
+
+.tag{
+  color:var(--accent);font-weight:700;
+  margin-bottom:6px;
+}
+.bio{color:var(--muted);line-height:1.6}
+
+/* SOCIALS */
+.socials{display:flex;gap:14px;margin-top:12px}
+.socials a{color:var(--accent);font-size:14px;text-decoration:none}
+
+/* GLASS SECTION CARDS */
+section.card{
+  background:var(--glass);
+  backdrop-filter:blur(24px);
+  border-radius:var(--radius);
+  padding:26px;
+  margin-top:32px;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:var(--shadow);
+  transition:.32s ease;
+}
+section.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.85);
+}
+
+/* SECTION TITLES */
+.section-title{font-size:20px;margin:0 0 16px;font-weight:700}
+
+/* SKILLS */
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skill{
+  background:rgba(30,40,48,0.6);
+  padding:8px 14px;border-radius:999px;
+  font-size:13px;font-weight:600;
+  color:#e8eef1;
+}
+.best{margin-top:12px;font-weight:700;color:var(--accent)}
+
+/* PROJECT CARDS */
+.projects-grid{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:760px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+.proj{
+  background:rgba(11,13,16,0.85);
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:.28s ease;
+}
+.proj:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(0,0,0,0.85);
+}
+.proj .img{
+  width:70px;height:70px;border-radius:10px;
+  background:rgba(20,24,28,0.8);
+  backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:#fff;
+}
+.proj h3{margin:0;font-size:16px}
+.proj p{
+  margin:6px 0 0;
+  font-size:13px;
+  line-height:1.45;
+  color:#bfc5c7;
+}
+
+/* RIGHT COLUMN CARDS */
+.contact-card{
+  background:#0d1014;
+  padding:20px;
+  border-radius:var(--radius);
+  margin-top:24px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow:var(--shadow);
+}
+.contact-card h3,.contact-card h4{margin:0 0 10px}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#062014;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:0.3s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.55);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;margin-top:48px;
+  color:var(--muted);
+  padding:14px 0;font-size:14px;
+}
+
+/* FLOATING CONTACT BUTTON */
+.contact-fab{
+  position:fixed;right:18px;bottom:24px;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--accent);
+  font-size:28px;
+  display:flex;justify-content:center;align-items:center;
+  box-shadow:0 10px 24px rgba(0,0,0,0.6);
+  z-index:999;
+  transition:.28s ease;
+}
+.contact-fab:hover{
+  transform:translateY(-6px) scale(1.08);
+}
+.contact-fab a{
+  color:#062014;text-decoration:none;width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="brand">
+        <div class="avatar">
+  <img src="https://ik.imagekit.io/yashveer/1.jpg?updatedAt=1763307833364" alt="Profile Photo">
+</div>
+        <div>
+          <h1 style="margin:0;">Yashveer Singh Rajpoot</h1>
+          <p class="tag">Catch me if you can</p>
+        </div>
+      </div>
+
+      <p class="bio">
+        Hey, I’m Yashveer Singh Rajpoot—18 years old, fueled by caffeine, curiosity,
+        and the questionable life choice of juggling web development, graphic design,
+        content writing, and Python tutoring all at once.
+        <br><br>
+        I build websites that load faster than your Wi-Fi decides to disappoint you.
+        Clean code, smooth UI, and zero drama—because there’s enough of that in real life already.
+      </p>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/yashveer.codes/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/yashvsr8/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-card">
+      <div class="contact-card">
+        <h3>Available for Work 🚀</h3>
+        <p class="bio">DM on Instagram for collaborations or projects.</p>
+        <a class="btn" href="https://www.instagram.com/yashveer.codes/" target="_blank">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <section class="card">
+    <h2 class="section-title">What I Learned / My Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Graphic Designing</div>
+      <div class="skill">Instagram Strategy</div>
+      <div class="skill">Social Media Handling</div>
+      <div class="skill">Copywriting</div>
+      <div class="skill">Content Writing</div>
+    </div>
+    <p class="best">Best Skills: Front-End Dev, Shopify Web Dev</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="card">
+    <h2 class="section-title">Projects I Have Created</h2>
+
+    <div class="projects-grid">
+      <a href="https://www.breka.ca/" target="_blank" class="proj">
+        <div class="img">🍞</div>
+        <div>
+          <h3>Breka Bakery & Café</h3>
+          <p>
+            A warm digital café experience designed to make visitors crave every scroll.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://www.sacher.com/en/" target="_blank" class="proj">
+        <div class="img">🏨</div>
+        <div>
+          <h3>Hotel Sacher</h3>
+          <p>
+            Understated luxury brought into sleek digital storytelling.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://astrotalk.store/" target="_blank" class="proj">
+        <div class="img">✨</div>
+        <div>
+          <h3>Astrotalk Store</h3>
+          <p>
+            A clean + mystical e-commerce experience guided by the stars.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://solastaa.com/" target="_blank" class="proj">
+        <div class="img">💅</div>
+        <div>
+          <h3>Solastaa</h3>
+          <p>
+            A stylish beauty brand site built for confidence and aesthetics.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="card">
+<h2 class="section-title">Project Stories</h2>
+
+
+<article style="margin-bottom:18px">
+<h3>Breka Bakery & Café</h3>
+<p class="bio">Breka isn’t just a bakery. It’s the kind of place where mornings sneak up on you with a croissant in one hand and a latte in the other, and suddenly life doesn’t feel so complicated. I built their digital presence with the same kind of precision I use when I decide whether to save someone or leave them to their chaos. Every pixel, every hover effect, every image of a pastry was chosen to make you pause, maybe drool a little, and feel like this café has been your secret obsession all along. The site tells the story of warmth and indulgence, of aroma and anticipation, but it also whispers something a little darker—the kind of sophistication you don’t expect from a bakery. It’s not just bread; it’s attention to detail, patience, and style baked right in. I wanted users to linger, to scroll just a little longer, to realize that a place this beautiful online probably tastes even better offline. And if they don’t—well, that’s their loss, but they’ll remember it, because Breka doesn’t let go easily.</p>
+</article>
+
+
+<article style="margin-bottom:18px">
+<h3>Hotel Sacher</h3>
+<p class="bio">Some places are legendary. Some places are whispered about over champagne and chocolate torte. Hotel Sacher is one of those places. Translating that aura into a digital experience wasn’t about showing off; it was about letting the elegance speak for itself. I built a website that oozes understated luxury, where every photo, every navigation element, and every text block feels like velvet brushing against your senses. Booking a stay isn’t just clicking a button; it’s an invitation into a world where history meets modern indulgence, and where the past winks at you while you sip your coffee. I wanted visitors to feel the charm, the mystery, and the kind of confidence that comes from knowing you’re in a place that has seen empires rise and fall but still serves the perfect dessert. This wasn’t just a website; it was storytelling with code, a digital portal to a timeless experience that leaves you both awed and slightly envious of the people who already call it home.</p>
+</article>
+
+
+<article style="margin-bottom:18px">
+<h3>Astrotalk Store</h3>
+<p class="bio">Astrotalk is more than gemstones, Rudraksha, and spiritual jewelry. It’s an experience, a nudge from the universe saying maybe, just maybe, you’re about to discover something extraordinary. Crafting their website was like curating a constellation—you place each element where it shines, creating connections that feel inevitable. I made sure the visuals felt like magic without being cheesy, like you stumbled into a treasure chest and the stars themselves were winking at you. Users can explore, shop, and get a sense of destiny while still knowing exactly what they’re buying. It’s playful, intriguing, and a little dangerous—the kind of allure that makes you come back and see what else the universe might have in store.</p>
+</article>
+
+
+<article>
+<h3>Solastaa</h3>
+<p class="bio">Solastaa isn’t a salon. It’s a playground for confidence, creativity, and the kind of beauty that doesn’t need permission. Designing their digital home meant capturing every subtlety—the glow of a facial, the sheen of a fresh hair color, the delicate artistry of nails done right. Every scroll tells a story of transformation, not just external but internal. I wanted visitors to feel pampered before they even book an appointment, to sense the mischief in making a small change that suddenly changes everything. It’s sophisticated yet playful, professional yet magnetic, a little mysterious, and undeniably stylish. Solastaa’s website isn’t just a place to book services; it’s a portal into a world where beauty meets personality, and every interaction feels like it was designed just for you.</p>
+</article>
+</section>
+
+<section class="tags">
+    <h3>Key words:</h3>
+    <p>web developer, website developer, web development, web development services, website development services, custom web development, front end developer, backend developer, full stack developer, freelance web developer, web development company, web development agency, web development for small business, ecommerce web development, web application development, web app developer, responsive web design, mobile friendly website, business website development, portfolio website developer, WordPress developer, Shopify developer, website redesign services, affordable web developer, best web development services, web development services near me, python web development, javascript developer, html css developer,HTML developer, learn HTML, HTML for beginners, HTML course, HTML tutorial, HTML coding, HTML and CSS, build website with HTML, HTML projects for beginners, HTML landing page, semantic HTML, HTML responsive layout,CSS developer, learn CSS, CSS for beginners, CSS course, CSS tutorial, CSS layout, CSS flexbox, CSS grid, responsive CSS, modern CSS design, website styling with CSS, CSS animations, CSS portfolio website,JavaScript developer, javascript programmer, learn javascript, javascript for beginners, javascript course, javascript tutorial, front end javascript developer, javascript projects for beginners, javascript web apps, vanilla javascript, javascript freelancer, javascript portfolio projects, Python developer, python programmer, python development, python web development, learn python, python for beginners, python projects, freelance python developer, python backend developer, python web app, python Django developer, python Flask developer, python automation scripts, python developer for hire, graphic designer, freelance graphic designer, graphic design services, logo design, branding and identity design, social media post design, Instagram post design, YouTube thumbnail design, poster design, flyer design, brochure design, business card design, graphic designer near me, affordable graphic designer, Canva designer, digital illustrator, banner design, website graphics designer, thumbnail designer, Instagram strategy, Instagram strategist, Instagram marketing, Instagram growth strategy, Instagram content strategy, Instagram marketing services, Instagram page management, Instagram business growth, grow Instagram followers, increase Instagram reach, Instagram engagement strategy, Instagram reel strategy, Instagram hashtag strategy, Instagram SEO, optimize Instagram profile, Instagram branding, Instagram content calendar, Instagram reels ideas, Instagram marketing for small business, social media manager, social media handling, social media management services, social media marketer, manage my social media, social media marketing for small business, Instagram and Facebook management, social media content management, social media posting service, social media strategy, social media branding, social media calendar, content planner for social media, social media growth services, social media ads management, social media optimization services, copywriter, freelance copywriter, website copywriter, landing page copywriter, sales page copywriter, email copywriter, social media copywriter, ad copywriter, Instagram caption copywriter, sales copywriting services, high converting copy, brand voice copywriter, copywriting for small business, copywriting services near me, persuasive copywriting, SEO copywriter, copywriting for websites, content writer, freelance content writer, blog writer, article writer, SEO content writer, website content writer, social media content writer, long form content writer, content writing services, content writer for hire, content writing for websites, content writing for Instagram, content writing for businesses, content marketing writer, technical content writer, creative content writer, ghostwriter for blogs, web design and development, website designer and developer, full website creation, website design for small business, modern website design, UI UX web design, custom website design, landing page design and development, one page website design, portfolio website design, ecommerce website design, redesign my website, fix my website, speed optimization for website, learn web development, web development course, full stack development course, front end development course, python web development course, javascript course online, HTML CSS javascript course, coding bootcamp web development, web development for beginners, project based web development course, social media content creator, Instagram content creator, content ideas for Instagram, content ideas for reels, content writer for Instagram, social media caption writer, carousel post designer, Instagram reel script writer, content repurposing for social media, </p>
+    <p>yashveer singh rajpoot, yashveer rajpoot, yashveer s rajpoot, yashveer singh r, yashveer singh rajput, yashveer rajput, yashveer singh developer, yashveer singh rajpoot developer, yashveer singh web developer, yashveer singh python developer, yashveer singh front end developer, yashveer singh full stack developer, yashveer singh web designer, yashveer singh software developer, yashveer singh programmer, yashveer singh rajpoot portfolio, yashveer singh portfolio website, yashveer rajpoot portfolio, yashveer rajpoot github portfolio, yashveer singh rajpoot github, yashveer github portfolio, yashveer singh rajpoot github pages, yashveer singh online portfolio, yashveer singh developer portfolio, yashveer singh html css javascript, yashveer singh rajpoot html css, yashveer singh javascript projects, yashveer singh python projects, yashveer singh web projects, websites by yashveer singh, websites by yashveer rajpoot, portfolio website by yashveer, web development by yashveer singh, github projects by yashveer singh, yashveer singh python developer portfolio, yashveer singh web development portfolio, yashveer singh front end portfolio, yashveer singh full stack portfolio, yashveer singh projects portfolio, yashveer singh rajpoot coding portfolio, yashveer singh rajpoot software portfolio, hire yashveer singh, hire yashveer rajpoot, hire yashveer singh developer, hire yashveer web developer, hire yashveer python developer, contact yashveer singh, work with yashveer singh, freelance developer yashveer singh, freelance web developer yashveer, yashveer singh india developer, yashveer singh rajpoot india, yashveer singh indian web developer, yashveer singh indian python developer, yashveer singh rajpoot programmer india, yashveer rajpoot software developer india, developer yashveer singh rajpoot, web developer yashveer singh, python developer yashveer singh, software engineer yashveer singh, front end developer yashveer, full stack developer yashveer, portfolio of yashveer singh, resume site of yashveer singh, yashveer singh rajpoot html css javascript developer, yashveer singh rajpoot website developer, yashveer singh rajpoot portfolio site, yashveer singh coding projects, yashveer singh github profile, yashveer singh rajpoot github projects, yashveer singh dev projects, yashveer singh graphic design, yashveer singh instagram strategy, yashveer singh social media handling, yashveer singh content writer, yashveer singh copywriting, yashveer singh content writing, social media content by yashveer, instagram posts by yashveer, yashveer singh rajpoot tech portfolio, yashveer singh rajpoot developer from india, yashveer singh coding portfolio github, yashveer singh rajpoot personal website, yashveer singh rajpoot personal brand, yashveer singh personal branding, yashveer singh rajpoot official portfolio"​
+
+</p>
+
+</section>
+
+</div>
+
+<footer>
+  © 2025 — Designed & Built by Yashveer Singh Rajpoot ⚡
+</footer>
+
+<div class="contact-fab">
+  <a href="https://www.instagram.com/yashveer.codes/" target="_blank">💬</a>
+</div>
+
+</body>
+</html>
